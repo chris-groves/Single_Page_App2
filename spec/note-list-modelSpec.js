@@ -15,7 +15,7 @@ testNoteListReturnsNoteModelsStoredInArray();
 function testNoteListCreatesAndStoresASingleNoteModel() {
   var noteList = new NoteList()
   noteList.createNote("Hello");
-  assert.isTrue(noteList.list.length === 1, "NoteList Creates and Stores a Note Model");
+  assert.isTrue(noteList.list[0].text === "Hello", "NoteList Creates and Stores a Note Model");
 };
 
 testNoteListCreatesAndStoresASingleNoteModel()
