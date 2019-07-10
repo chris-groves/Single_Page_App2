@@ -3,9 +3,15 @@
     this.list = [];
   };
 
-  NoteList.prototype.displayList = function() {
+  NoteList.prototype.createNote = function (text) {
+    note = new Note(text);
+    this.list.push(note)
+  };
+
+  NoteList.prototype.displayNotes = function() {
     return this.list
   }
+
 
   exports.NoteList = NoteList;
 })(this);
