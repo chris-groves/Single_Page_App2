@@ -4,3 +4,11 @@ function testNoteTextPropertyStoresTextOfNote() {
 };
 
 testNoteTextPropertyStoresTextOfNote();
+
+
+function testNoteReturnsTextOfNote() {
+  var note = new Note("My favourite language is JavaScript");
+  assert.isTrue(note.displayText() === "My favourite language is JavaScript");
+};
+
+testNoteReturnsTextOfNote();
