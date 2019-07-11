@@ -11,7 +11,19 @@ function testNoteListViewReturnsNoteListWithSingleEntryInHTML() {
   var noteList = new NoteList
   noteList.createNote("Hello")
   var noteListView = new NoteListView(noteList)
-  assert.isTrue(noteListView.displayListViewHTML() === "<li><div>Hello</div></li>", "NoteListView displays HTML");
+  assert.isTrue(noteListView.displayListViewHTML() === '<li>Hello</li>', "NoteListView displays HTML");
 };
 
 testNoteListViewReturnsNoteListWithSingleEntryInHTML();
+
+function testNoteListViewReturnsNoteListWithThreeEntriesInHTML() {
+  var noteList = new NoteList
+  noteList.createNote("Hello")
+  noteList.createNote("Hello")
+  noteList.createNote("Hello")
+  var noteListView = new NoteListView(noteList)
+  assert.isTrue(noteListView.displayListViewHTML() ===
+  "<li>Hello</li><li>Hello</li><li>Hello</li>", "NoteListView displays multiple HTML entries");
+};
+
+testNoteListViewReturnsNoteListWithThreeEntriesInHTML();

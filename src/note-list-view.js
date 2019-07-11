@@ -8,12 +8,11 @@
   }
 
   NoteListView.prototype.displayListViewHTML = function(noteList) {
-
-    var startHTML = '<li><div>'
-    var endHTML = '</div></li>'
-
-    return startHTML + this.noteList.list[0].text + endHTML
-  }
-
+   var html = []
+   for (i = 0; i < this.noteList.list.length; i++) {
+     html.push('<li>' + this.noteList.list[i].text + '</li>')
+   }
+   return html.join('')
+}
   exports.NoteListView = NoteListView;
 })(this);
