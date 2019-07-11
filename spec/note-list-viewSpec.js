@@ -11,7 +11,7 @@ function testNoteListViewReturnsNoteListWithSingleEntryInHTML() {
   var noteList = new NoteList
   noteList.createNote("Hello")
   var noteListView = new NoteListView(noteList)
-  assert.isTrue(noteListView.displayListViewHTML() === '<li>Hello</li>', "NoteListView displays HTML");
+  assert.isTrue(noteListView.displayListViewHTML() === '<li>Hello</li>', "NoteListView displays one HTML entry");
 };
 
 testNoteListViewReturnsNoteListWithSingleEntryInHTML();
@@ -23,7 +23,16 @@ function testNoteListViewReturnsNoteListWithThreeEntriesInHTML() {
   noteList.createNote("Hello")
   var noteListView = new NoteListView(noteList)
   assert.isTrue(noteListView.displayListViewHTML() ===
-  "<li>Hello</li><li>Hello</li><li>Hello</li>", "NoteListView displays multiple HTML entries");
+  "<li>Hello</li><li>Hello</li><li>Hello</li>", "NoteListView displays three HTML entries");
 };
 
 testNoteListViewReturnsNoteListWithThreeEntriesInHTML();
+
+function testNoteListViewReturnsNoteListWithZeroEntriesInHTML() {
+  var noteList = new NoteList
+  var noteListView = new NoteListView(noteList)
+  assert.isTrue(noteListView.displayListViewHTML() ===
+  "", "NoteListView displays zero HTML entries");
+};
+
+testNoteListViewReturnsNoteListWithZeroEntriesInHTML();
